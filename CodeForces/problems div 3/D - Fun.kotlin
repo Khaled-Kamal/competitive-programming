@@ -1,0 +1,19 @@
+fun main() {
+    val t = readLine()!!.toInt()
+    repeat(t) {
+        val (n, x) = readLine()!!.split(' ').map { it.toInt() }
+        println(computeCount(n, x))
+    }
+}
+
+fun computeCount(n: Int, x: Int): Long {
+    var count = 0L
+    for (a in 1..x) {
+        val bMax = minOf(x - a, n / a)
+        for (b in 1..bMax) {
+            val cMax = minOf(x - a - b, (n - a * b) / (a + b))
+            count += maxOf(0, cMax)
+        }
+    }
+    return count
+}

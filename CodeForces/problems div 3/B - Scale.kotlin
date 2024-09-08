@@ -1,0 +1,36 @@
+import java.util.Scanner
+
+fun reduceGrid(n: Int, k: Int, grid: List<String>): List<String> {
+    val reducedSize = n / k
+    val reducedGrid = MutableList(reducedSize) { StringBuilder(reducedSize) }
+
+    for (i in 0 until reducedSize) {
+        for (j in 0 until reducedSize) {
+            var blockSum = 0
+            for (x in i * k until (i + 1) * k) {
+                for (y in j * k until (j + 1) * k) {
+                    blockSum += grid[x][y] - '0'
+                }
+            }
+            val blockValue = if (blockSum > (k * k / 2)) '1' else '0'
+            reducedGrid[i].append(blockValue)
+        }
+    }
+
+    return reducedGrid.map { it.toString() }
+}
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val t = scanner.nextInt()
+
+    repeat(t) {
+        val n = scanner.nextInt()
+        val k = scanner.nextInt()
+        scanner.nextLine() // Consume the remaining newline
+        val grid = List(n) { scanner.nextLine() }
+
+        val reducedGrid = reduceGrid(n, k, grid)
+        reducedGrid.forEach { println(it) }
+    }
+}

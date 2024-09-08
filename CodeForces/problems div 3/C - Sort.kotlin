@@ -1,0 +1,39 @@
+fun main() {
+    val reader = System.`in`.bufferedReader()
+    val writer = System.out.bufferedWriter()
+
+    val t = reader.readLine().toInt()
+    repeat(t) {
+        val (n, q) = reader.readLine().split(" ").map { it.toInt() }
+        val a = reader.readLine()
+        val b = reader.readLine()
+
+        val solve_a = Array(n + 1) { IntArray(26) }
+        val suffix = Array(n + 1) { IntArray(26) }
+
+        for (i in 1..n) {
+            for (j in 0 until 26) {
+                solve_a[i][j] = solve_a[i - 1][j]
+                suffix[i][j] = suffix[i - 1][j]
+            }
+            solve_a[i][a[i - 1] - 'a']++
+            suffix[i][b[i - 1] - 'a']++
+        }
+
+        repeat(q) {
+            val (l, r) = reader.readLine().split(" ").map { it.toInt() }
+            var x = 0
+
+            for (j in 0 until 26) {
+                val countA = solve_a[r][j] - solve_a[l - 1][j]
+                val countB = suffix[r][j] - suffix[l - 1][j]
+                x += Math.abs(countA - countB)
+            }
+
+            writer.write("${x / 2}\n")
+        }
+    }
+
+    writer.flush()
+    writer.close()
+}

@@ -1,0 +1,19 @@
+fun minAnimals(testCases: List<Int>): List<Int> {
+    val results = mutableListOf<Int>()
+    for (n in testCases) {
+        val maxCows = n / 4
+        val remainingLegs = n - (maxCows * 4)
+        val chickens = remainingLegs / 2
+        val totalAnimals = maxCows + chickens
+        results.add(totalAnimals)
+    }
+    return results
+}
+
+fun main() {
+    val t = readLine()!!.toInt()
+    val testCases = List(t) { readLine()!!.toInt() }
+
+    val results = minAnimals(testCases)
+    results.forEach { println(it) }
+}
