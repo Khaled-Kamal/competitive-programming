@@ -1,0 +1,29 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+
+  int s , tmp , rev=0;
+  cin >> s ;
+  tmp=s;
+  while(s)
+  {
+      rev=rev*10+s%10;
+      s=s/10;
+      
+  }
+  if(rev==tmp)
+  {
+     cout <<rev << endl << "YES" ;
+  }
+  else
+  {
+      cout <<rev << endl << "NO" ;
+  }
+  
+
+    return 0;
+}
+
+
+ 
