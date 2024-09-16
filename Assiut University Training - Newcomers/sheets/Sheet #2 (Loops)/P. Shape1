@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+#define fast ios_base::sync_with_stdio(false);cin.tie(nullptr);
+#define int long long
+using namespace std;
+
+int32_t main()
+{
+     fast
+    int x ;
+     cin >> x ;
+    for (int i = x; i >=1 ; --i) {
+        for (int j = 1; j <=i ; ++j) {
+           cout<<'*';
+        }
+        cout<<'\n';
+    }
+}
