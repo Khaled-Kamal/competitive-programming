@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void printDigits(int x) {
+    if (x == 0) {
+        cout << 0 << " ";
+    } else {
+        while (x) {
+            cout << x % 10 << " ";
+            x = x / 10;
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int x;
+        cin >> x;
+        printDigits(x);
+    }
+
+    return 0;
+}
