@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> fibonacci_sequence(int N) {
+    if (N == 1) {
+        return {0};
+    }
+    vector<int> fib_sequence = {0, 1};
+    for (int i = 2; i < N; ++i) {
+        int next_fib = fib_sequence[i - 1] + fib_sequence[i - 2];
+        fib_sequence.push_back(next_fib);
+    }
+    return fib_sequence;
+}
+
+int main() {
+    int N;
+    cin >> N;
+    vector<int> fib_sequence = fibonacci_sequence(N);
+    for (int i = 0; i < N; ++i) {
+        cout << fib_sequence[i];
+        if (i != N - 1) {
+            cout << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}
