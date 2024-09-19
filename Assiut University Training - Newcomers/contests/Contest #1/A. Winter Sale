@@ -1,0 +1,16 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int X, P;
+    cin >> X >> P;
+
+    double discountedPrice = P;
+    double originalPrice = discountedPrice / (1 - (X / 100.0));
+
+    cout << fixed << setprecision(2) << ceil(originalPrice * 100) / 100 << endl;
+
+    return 0;
+}
