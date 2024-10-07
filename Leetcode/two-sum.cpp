@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& v, int target) {
+  //  vector<int> twoSum(vector<int>& v, int target) {
         map<int,int>m,indx;
         vector<int>anss(2);
         for (int i = 0; i < v.size(); ++i) {
