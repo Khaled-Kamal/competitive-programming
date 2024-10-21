@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-int m , n;
+//int m , n;
 void solve() {
 
 
