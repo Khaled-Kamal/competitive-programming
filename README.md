@@ -1,1 +1,1 @@
-competitive-programming_
+competitive-programming
