@@ -1,0 +1,21 @@
+import java.util.*
+
+fun main() {
+    val s = Scanner(System.`in`)
+    val n = s.nextInt()
+
+    repeat(n) {
+        f(s)
+    }
+}
+
+fun f(s: Scanner) {
+    val a = s.nextInt()
+    val b = s.nextInt()
+    println(g(a, b))
+}
+
+fun g(a: Int, b: Int): String {
+    val d = a + 1 - b
+    return if (b == a + 1 || (d >= 0 && d % 9 == 0)) "Yes" else "No"
+}
