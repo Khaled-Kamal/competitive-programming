@@ -6,7 +6,6 @@ using namespace std;
 using ll = long long;
 #define endl '\n'
 #define int ll
-//====================//
 
 const int MOD = 998244353;
 struct mint {
