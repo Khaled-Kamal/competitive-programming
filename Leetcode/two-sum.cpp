@@ -5,7 +5,7 @@
 using namespace std;
 using ll = long long;
 #define endl '\n'
-#define int l
+#define int ll
 
 const int MOD = 998244353;
 struct mint {
@@ -224,6 +224,7 @@ using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
 //   return fact[n] * inv_fact[k] * inv_fact[n - k];
 // }
  
+
 
 
 
