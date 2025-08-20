@@ -14,7 +14,7 @@
 //         }
 //         return anss;
 //     }
-// }ك
+// }
 
 
 #include "bits/stdc++.h"
@@ -241,6 +241,7 @@ using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
 //   return fact[n] * inv_fact[k] * inv_fact[n - k];
 // }
  
+
 
 
 
